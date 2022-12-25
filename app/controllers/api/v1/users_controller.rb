@@ -27,6 +27,12 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      render json: 'User profile updated successfully', status: :ok
+    else
+      render json: 'unable to update user', status: unprocessable_entity
+    end
   end
 
   def destroy
