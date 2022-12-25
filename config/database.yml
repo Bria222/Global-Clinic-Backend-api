@@ -3,19 +3,19 @@ default: &default
   encoding: unicode
   user: postgres
   host: localhost
-  password: annor0543
+  password: brian
   port: 5432
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 development:
   <<: *default
-  database: global_clinic
+  database: global
   
 test:
   <<: *default
-  database: global_clinic_test
+  database: global_test
 
 production:
   <<: *default
-  database: global_clinic_production
-  username: global_clinic
+  database: global_production
+  username: global
   password: <%= ENV["RAILS_BUDGET_APP_DATABASE_PASSWORD"] %>
