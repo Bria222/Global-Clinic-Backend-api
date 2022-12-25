@@ -1,6 +1,6 @@
 class Api::V1::UsersController < ApplicationController
   def index
-    @users = User.includes(:appointments).order('created_at desc')
+    @users = User.order('created_at desc')
     if @users
       render json: @users, status: :ok
     else
